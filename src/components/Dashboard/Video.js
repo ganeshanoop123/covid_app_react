@@ -15,6 +15,11 @@ export default class Video extends React.Component {
             progress: "0"
         };
     }
+    componentDidMount(){
+        window.onload= function(){
+            var x = document.getElementById("myVideo").play();
+        }
+    }
 
     render() {
         return (
