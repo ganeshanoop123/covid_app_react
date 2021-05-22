@@ -25,7 +25,7 @@ export default class Video extends React.Component {
         return (
             <div className="video">
                 <video className="w-100" autoPlay={true} muted loop id="myVideo">
-                    <source src="./covid.mp4" type="video/mp4" />
+                    <source src="https://cdn.videvo.net/videvo_files/video/free/2020-12/small_watermarked/201211%20_01_Covid%20Vaccine_4k_011_preview.webm" type="video/webm" />
                 </video>
             </div>    
         );
