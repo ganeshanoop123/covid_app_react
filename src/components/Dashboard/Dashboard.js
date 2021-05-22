@@ -40,7 +40,7 @@ export default function Dashboard(){
     }
     useEffect(() => {
         loadCovidData()
-    })
+    },[])
     return(
         <div>
             <Video></Video>
