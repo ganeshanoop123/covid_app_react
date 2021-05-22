@@ -1,0 +1,29 @@
+.video{
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    width: 100%;
+    opacity: 1;
+    background-color: transparent;
+}
+.btn-outline{
+    border: solid 1px #f5f6f9;
+    font-size: 14px;
+    border-radius: 16px;
+    padding: 13px;
+    line-height: 10px;
+    color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+}
+.box-shadow{
+    /* box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px; */
+}
+.btn-outline:hover{
+    background-color: #000;
+    color: #fff !important;
+}
