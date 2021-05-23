@@ -44,8 +44,8 @@ export default function Dashboard(){
     return(
         <div>
             <Video></Video>
-            <div className="d-flex FLEX-WRAP mt-50 justify-content-center text-white">
-                <div className="mt-0">
+            <div className="row justify-content-center text-white pt-50">
+                <div className="col">
                     <h1 className="font-weight-bold">
                         TOTAL CASES
                     </h1>
@@ -53,7 +53,7 @@ export default function Dashboard(){
                         {numberWithCommas(covid.cases)}
                     </h1>
                 </div>
-                <div className="ml-30">
+                <div className="col cases">
                     <h1 className="font-weight-bold">
                         TOTAL RECOVERED CASES
                     </h1>
@@ -61,7 +61,7 @@ export default function Dashboard(){
                         {numberWithCommas(covid.recovered)}
                     </h1>
                 </div>
-                <div className="ml-30">
+                <div className="col cases">
                     <h1 className="font-weight-bold">
                         TOTAL DEATHS
                     </h1>
@@ -70,9 +70,9 @@ export default function Dashboard(){
                     </h1>
                 </div>
             </div>
-            <button className="btn btn-smm btn-outline mt-30" type="button">
+            {/* <button className="btn btn-smm btn-outline mt-30" type="button">
                 Get Started
-            </button>
+            </button> */}
         </div>    
     )
 }
