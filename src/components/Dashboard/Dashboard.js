@@ -13,7 +13,7 @@ export default function Dashboard(){
         try {
             const {data} = await axios({
                 method: 'get', //you can set what request you want to be
-                url: `https://coronavirus-19-api.herokuapp.com/countries/all`,
+                url: `https://coronavirus-19-api.herokuapp.com/all`,
                 headers: {
                     'Content-Type': 'application/json'
                 },

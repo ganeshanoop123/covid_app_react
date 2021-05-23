@@ -1,8 +1,9 @@
-import React, { useState, useMemo } from 'react'
+import React, { useState, useEffect } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
+import axios from "axios";
 const useStyles = makeStyles((theme) => ({
     formControl: {
       margin: theme.spacing(1),
@@ -14,11 +15,39 @@ const useStyles = makeStyles((theme) => ({
 }));
 export default function Navbar(){
     const classes = useStyles();
-    const [age, setAge] = React.useState('');
+    const [selected_country, setSelectedCountry] = React.useState("");
+    const [countries, setCountry] = React.useState("");
 
     const handleChange = (event) => {
-        setAge(event.target.value);
+        console.log(event)
+        setSelectedCountry(event.target.value);
     };
+    const loadCovidData = async () => {
+        try {
+            const {data} = await axios({
+                method: 'get', //you can set what request you want to be
+                url: `https://coronavirus-19-api.herokuapp.com/countries`,
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+            })
+            setCountry(data)
+            setSelectedCountry("World");
+            return data;
+        } catch (e) {
+            let msg = ""
+            // if(e.response.data.hasOwnProperty('errors')){
+            //     msg = e.response.data.errors[0].msg
+            // }
+            // else{
+            //     msg = e.response.data.message
+            // }
+            return console.log('Error')
+        }
+    }
+    useEffect(() => {
+        loadCovidData()
+    },[])
     return(
         <div className="navbar">
             <h1 className="text-white font-weight-bold">
@@ -26,13 +55,12 @@ export default function Navbar(){
             </h1>
             <div>
                 <FormControl className={classes.formControl}>
-                    <Select value={age} onChange={handleChange} displayEmpty className={classes.selectEmpty} inputProps={{ 'aria-label': 'Without label' }}>
-                        <MenuItem value="">
-                            <em>World</em>
-                        </MenuItem>
-                        <MenuItem value={10}>Ten</MenuItem>
-                        <MenuItem value={20}>Twenty</MenuItem>
-                        <MenuItem value={30}>Thirty</MenuItem>
+                    <Select name="country" value={selected_country} onChange={handleChange} displayEmpty className={classes.selectEmpty} inputProps={{ 'aria-label': 'Without label' }}>
+                        {countries && countries.map((country,index) => (
+                            <MenuItem key={index} value={country.country}>
+                                {country.country}
+                            </MenuItem>
+                        ))}
                     </Select>
                 </FormControl>
             </div>
