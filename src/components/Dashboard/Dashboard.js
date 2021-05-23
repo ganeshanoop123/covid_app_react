@@ -44,7 +44,7 @@ export default function Dashboard(){
     return(
         <div>
             <Video></Video>
-            <div className="row justify-content-center text-white pt-50">
+            <div className="row justify-content-center text-white pt-50 cases">
                 <div className="col">
                     <h1 className="font-weight-bold">
                         TOTAL CASES
@@ -53,7 +53,7 @@ export default function Dashboard(){
                         {numberWithCommas(covid.cases)}
                     </h1>
                 </div>
-                <div className="col cases">
+                <div className="col">
                     <h1 className="font-weight-bold">
                         TOTAL RECOVERED CASES
                     </h1>
@@ -61,7 +61,7 @@ export default function Dashboard(){
                         {numberWithCommas(covid.recovered)}
                     </h1>
                 </div>
-                <div className="col cases">
+                <div className="col">
                     <h1 className="font-weight-bold">
                         TOTAL DEATHS
                     </h1>

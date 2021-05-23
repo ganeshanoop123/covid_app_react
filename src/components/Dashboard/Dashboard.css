@@ -28,3 +28,12 @@
     object-fit: fill;
     height: -webkit-fill-available;
 }
+@media (max-width: 767px){
+    .col{
+        min-width: 100%;
+        margin-top: 4rem;
+    }
+    .cases{
+        padding-top: 10rem !important;
+    }
+}
