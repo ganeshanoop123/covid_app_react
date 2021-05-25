@@ -13,14 +13,14 @@ const useStyles = makeStyles((theme) => ({
       marginTop: theme.spacing(2),
     },
 }));
-export default function Navbar(){
+export default function Navbar(props){
     const classes = useStyles();
     const [selected_country, setSelectedCountry] = React.useState("");
     const [countries, setCountry] = React.useState("");
 
     const handleChange = (event) => {
-        console.log(event)
         setSelectedCountry(event.target.value);
+        props.getCountryData(event.target.value);
     };
     const loadCovidData = async () => {
         try {
@@ -33,6 +33,7 @@ export default function Navbar(){
             })
             setCountry(data)
             setSelectedCountry("World");
+            props.getCountryData("World");
             return data;
         } catch (e) {
             let msg = ""

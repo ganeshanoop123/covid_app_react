@@ -3,43 +3,38 @@ import Video from "./Video.js"
 import axios from "axios";
 import "./Dashboard.css"
 
-export default function Dashboard(){   
+export default function Dashboard(props){   
     const [covid,setCovid] = useState({
+        active: 0,
         cases: 0,
         recovered: 0,
         deaths: 0
     })
-    const loadCovidData = async () => {
+    const loadCountryData = async () => {
         try {
             const {data} = await axios({
                 method: 'get', //you can set what request you want to be
-                url: `https://coronavirus-19-api.herokuapp.com/all`,
+                url: `https://coronavirus-19-api.herokuapp.com/countries/`+props.country_selected,
                 headers: {
                     'Content-Type': 'application/json'
                 },
             })
+            console.log(data)
             setCovid({
+                active: data.active,
                 cases: data.cases,
                 recovered: data.recovered,
                 deaths: data.deaths
             });
             return data;
         } catch (e) {
-            let msg = ""
-            if(e.response.data.hasOwnProperty('errors')){
-                msg = e.response.data.errors[0].msg
-            }
-            else{
-                msg = e.response.data.message
-            }
-            return console.log('Error')
-        }
+        }    
     }
     const numberWithCommas = (x) => {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
     useEffect(() => {
-        loadCovidData()
+        loadCountryData()
     },[])
     return(
         <div>
@@ -48,6 +43,14 @@ export default function Dashboard(){
                 <div className="col">
                     <h1 className="font-weight-bold">
                         TOTAL CASES
+                    </h1>
+                    <h1 className="font-weight-bold">
+                        {numberWithCommas(covid.cases)}
+                    </h1>
+                </div>
+                <div className="col">
+                    <h1 className="font-weight-bold">
+                        TOTAL ACTIVE CASES
                     </h1>
                     <h1 className="font-weight-bold">
                         {numberWithCommas(covid.cases)}
