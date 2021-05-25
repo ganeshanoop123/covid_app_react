@@ -53,7 +53,7 @@ export default function Dashboard(props){
                         TOTAL ACTIVE CASES
                     </h1>
                     <h1 className="font-weight-bold">
-                        {numberWithCommas(covid.cases)}
+                        {numberWithCommas(covid.active)}
                     </h1>
                 </div>
                 <div className="col">
