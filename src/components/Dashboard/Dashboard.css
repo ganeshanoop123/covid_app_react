@@ -36,4 +36,23 @@
     .cases{
         padding-top: 10rem !important;
     }
+    .recovered-cases{
+        padding-top: 2rem !important;
+    }
+}
+@media (max-width: 400px){
+    .col{
+        min-width: 100%;
+        margin-top: 2rem;
+    }
+    .cases{
+        padding-top: 3rem !important;
+    }
+    .recovered-cases{
+        padding-top: 1rem !important;
+    }
+}
+.overflow-content{
+    overflow: auto;
+    height: 100vh;
 }

@@ -37,9 +37,9 @@ export default function Dashboard(props){
         loadCountryData()
     },[])
     return(
-        <div>
+        <div className="overflow-content">
             <Video></Video>
-            <div className="row justify-content-center text-white pt-50 cases">
+            <div className="row justify-content-center text-white pt-30 cases">
                 <div className="col">
                     <h1 className="font-weight-bold">
                         TOTAL CASES
@@ -56,6 +56,8 @@ export default function Dashboard(props){
                         {numberWithCommas(covid.active)}
                     </h1>
                 </div>
+            </div>    
+            <div className="row justify-content-center text-white pt-30 recovered-cases">
                 <div className="col">
                     <h1 className="font-weight-bold">
                         TOTAL RECOVERED CASES
