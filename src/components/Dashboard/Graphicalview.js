@@ -52,10 +52,7 @@ export default function Graphicalview(props){
                 </div>
             </div>
             <div>
-                <Bar width={100}
-	height={43}
-	options={{ maintainAspectRatio: true }}
- data={data} options={options} />
+                <Bar width={100} height={80} options={{ maintainAspectRatio: false }} data={data} options={options} />
             </div>
         </div>
     )

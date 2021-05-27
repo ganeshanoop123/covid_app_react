@@ -61,11 +61,13 @@ export default function Dashboard(props){
     return(
         <div className="overflow-content">
             <Video></Video>
-            <div className="w-100">
-                <button onClick={showGraphical} className="btn btn-smm btn-outline d-block pull-right mr-5" type="button">
-                    Graphical View
-                </button>
-            </div>
+            { graphical_view === false ?
+                <div className="w-100">
+                    <button onClick={showGraphical} className="btn btn-smm btn-outline d-block pull-right mr-5" type="button">
+                        Graphical View
+                    </button>
+                </div> : null
+            }    
             {graphical_view === true ?
                 <Graphicalview closeGraphical={closeGraphical} covid_cases={covid}></Graphicalview> :
                 <div>
