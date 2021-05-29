@@ -56,7 +56,7 @@ export default function Navbar(props){
     },[])
     return(
         <div className="navbar pt-0">
-            <h1 className="text-white font-weight-bold mt-2">
+            <h1 className="text-white font-weight-bold">
                 COVID-19
             </h1>
             <div className="d-flex align-items-center">

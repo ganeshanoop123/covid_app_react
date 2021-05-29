@@ -62,7 +62,6 @@
     left: 0;
     bottom: 0;
     height: 100%;
-    transition: 0.5s ease all;
     width: 100%;
     right: 0;
     z-index: 9999;
@@ -75,7 +74,7 @@
     opacity: 1;
     padding-left: 10px;
     padding-right: 10px;
-    padding-top: 14px;
+    padding-top: 12px;
     cursor: pointer;
     z-index: 9999;
     border-bottom: solid 1px #000;
