@@ -59,9 +59,9 @@ export default function Dashboard(props){
                 <Graphicalview closeGraphical={props.closeGraphical} covid_cases={covid}></Graphicalview> :
                 <div>
                     {loading === false ?
-                        <div className="mt-0" style={{height:'100vh',overflow:'auto'}}>
+                        <div className="mt-0 container" style={{height:'100vh',overflow:'auto'}}>
                             <div className="row justify-content-center text-white pt-15 cases">
-                                <div className="col">
+                                <div className="col cases-card">
                                     <h1 className="font-weight-bold">
                                         TOTAL CASES
                                     </h1>
@@ -69,7 +69,7 @@ export default function Dashboard(props){
                                         {numberWithCommas(covid.cases)}
                                     </h1>
                                 </div>
-                                <div className="col">
+                                <div className="col cases-card ml-10">
                                     <h1 className="font-weight-bold">
                                         TOTAL ACTIVE CASES
                                     </h1>
@@ -79,7 +79,7 @@ export default function Dashboard(props){
                                 </div>
                             </div>    
                             <div className="row justify-content-center text-white pt-30 recovered-cases">
-                                <div className="col">
+                                <div className="col cases-card">
                                     <h1 className="font-weight-bold">
                                         TOTAL RECOVERED CASES
                                     </h1>
@@ -87,7 +87,7 @@ export default function Dashboard(props){
                                         {numberWithCommas(covid.recovered)}
                                     </h1>
                                 </div>
-                                <div className="col">
+                                <div className="col cases-card ml-10">
                                     <h1 className="font-weight-bold">
                                         TOTAL DEATHS
                                     </h1>

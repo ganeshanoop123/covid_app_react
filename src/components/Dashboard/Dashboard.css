@@ -32,12 +32,13 @@
     .col{
         min-width: 100%;
         margin-top: 4rem;
+        margin-left: 0rem !important;
     }
     .cases{
         padding-top: 3rem !important;
     }
     .recovered-cases{
-        padding-top: 2rem !important;
+        padding-top: 0rem !important;
     }
 }
 @media (max-width: 400px){
@@ -78,4 +79,10 @@
     cursor: pointer;
     z-index: 9999;
     border-bottom: solid 1px #000;
+}
+.cases-card{
+    padding: 36px;
+    background: #4c4a4a;
+    border-radius: 8px;
+    opacity: 0.7;
 }
