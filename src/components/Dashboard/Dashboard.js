@@ -35,7 +35,6 @@ export default function Dashboard(props){
                     'Content-Type': 'application/json'
                 },
             })
-            console.log(data)
             setCovid({
                 active: data.active,
                 cases: data.cases,
