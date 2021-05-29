@@ -35,15 +35,9 @@ export default function Navbar(props){
             setCountry(data)
             setSelectedCountry("World");
             props.getCountryData("World");
+            props.loadCountries(data)
             return data;
         } catch (e) {
-            let msg = ""
-            // if(e.response.data.hasOwnProperty('errors')){
-            //     msg = e.response.data.errors[0].msg
-            // }
-            // else{
-            //     msg = e.response.data.message
-            // }
             return console.log('Error')
         }
     }

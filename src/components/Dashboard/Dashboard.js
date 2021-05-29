@@ -58,7 +58,7 @@ export default function Dashboard(props){
             
             {props.graphical_view === true ?
                 <Graphicalview closeGraphical={props.closeGraphical} covid_cases={covid}></Graphicalview> : 
-                props.compare === true ? <Compare closeComparision={props.closeComparision}></Compare> : 
+                props.compare === true ? <Compare country_list={props.country_list} closeComparision={props.closeComparision}></Compare> : 
                 <div>
                     {loading === false ?
                         <div className="mt-10 cases-top container">
