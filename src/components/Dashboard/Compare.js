@@ -13,6 +13,7 @@ export default function Compare(props){
                     </div>
                 </div>
             </div>
+            <div>Please Select Country</div>
         </div>    
     )
 }
