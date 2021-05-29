@@ -56,7 +56,7 @@ export default function Navbar(props){
     },[])
     return(
         <div className="navbar pt-0">
-            <h1 className="text-white font-weight-bold mb-2">
+            <h1 className="text-white font-weight-bold mb-1">
                 COVID-19
             </h1>
             <div className="d-flex align-items-center">
@@ -75,7 +75,7 @@ export default function Navbar(props){
                     : null
                 }    
                 { props.graphical_view === false ?
-                    <FormControl className={classes.formControl} style={{position:'relative',top:'0px'}}>
+                    <FormControl className={classes.formControl} style={{position:'relative',bottom:'2px'}}>
                         <Select name="country" value={selected_country} onChange={handleChange} displayEmpty className={classes.selectEmpty} inputProps={{ 'aria-label': 'Without label' }}>
                             {countries && countries.map((country,index) => (
                                 <MenuItem key={index} value={country.country}>
