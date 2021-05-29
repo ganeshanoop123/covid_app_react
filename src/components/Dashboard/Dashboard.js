@@ -60,7 +60,7 @@ export default function Dashboard(props){
                 <div>
                     {loading === false ?
                         <div className="mt-0" style={{height:'100vh',overflow:'auto'}}>
-                            <div className="row justify-content-center text-white pt-10 cases">
+                            <div className="row justify-content-center text-white pt-15 cases">
                                 <div className="col">
                                     <h1 className="font-weight-bold">
                                         TOTAL CASES

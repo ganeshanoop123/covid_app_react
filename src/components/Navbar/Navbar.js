@@ -62,9 +62,15 @@ export default function Navbar(props){
             <div className="d-flex align-items-center">
                 { props.graphical_view === false ?
                     <div className="w-100">
-                        <button onClick={props.showGraphical} className="btn btn-smm btn-outline d-flex align-items-center mr-3" type="button">
-                            <i className="fa fa-bar-chart text-white pt-2 mr-1"></i>{ mobile === false ? <span>Graphical View</span> : null }
-                        </button>
+                        { mobile === false ?
+                            <button onClick={props.showGraphical} className="btn btn-smm btn-outline d-flex align-items-center mr-3" type="button">
+                                <i className="fa fa-bar-chart text-white pt-2 mr-1"></i><span>Graphical View</span>
+                            </button>
+                            : 
+                            <button onClick={props.showGraphical} className="btn btn-smm btn-outline d-flex align-items-center" style={{width:'10px',minWidth:'50px',paddingRight:'0px'}} type="button">
+                                <i className="fa fa-bar-chart text-white pt-2 mr-1"></i>
+                            </button>
+                        }       
                     </div> : null
                 }    
                 <FormControl className={classes.formControl} style={{position:'relative',top:'0px'}}>
