@@ -34,7 +34,7 @@
         margin-top: 4rem;
     }
     .cases{
-        padding-top: 10rem !important;
+        padding-top: 3rem !important;
     }
     .recovered-cases{
         padding-top: 2rem !important;
@@ -74,7 +74,7 @@
     opacity: 1;
     padding-left: 10px;
     padding-right: 10px;
-    padding-top: 6px;
+    padding-top: 12px;
     cursor: pointer;
     z-index: 9999;
     border-bottom: solid 1px #000;

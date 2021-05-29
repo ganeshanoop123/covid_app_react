@@ -14,7 +14,6 @@ const override = css`
 `;
 export default function Dashboard(props){   
     const [loading,setLoading] = useState(true)
-    const [graphical_view,setGraphicalview] = useState(false)
     const [color, setColor] = useState("#ffffff");
     const [covid,setCovid] = useState({
         active: 0,
@@ -22,9 +21,6 @@ export default function Dashboard(props){
         recovered: 0,
         deaths: 0
     })
-    const closeGraphical = () => {
-        setGraphicalview(false)
-    }
     const loadCountryData = async () => {
         try {
             setLoading(true)
@@ -51,28 +47,20 @@ export default function Dashboard(props){
     const numberWithCommas = (x) => {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
-    const showGraphical = () => {
-        setGraphicalview(true)
-    }
+    
     useEffect(() => {
         loadCountryData()
     },[])
     return(
         <div className="overflow-content">
             <Video></Video>
-            { graphical_view === false ?
-                <div className="w-100">
-                    <button onClick={showGraphical} className="btn btn-smm btn-outline d-block pull-right mr-5" type="button">
-                        Graphical View
-                    </button>
-                </div> : null
-            }    
-            {graphical_view === true ?
-                <Graphicalview closeGraphical={closeGraphical} covid_cases={covid}></Graphicalview> :
+            
+            {props.graphical_view === true ?
+                <Graphicalview closeGraphical={props.closeGraphical} covid_cases={covid}></Graphicalview> :
                 <div>
                     {loading === false ?
-                        <div className="mt-10">
-                            <div className="row justify-content-center text-white pt-15 cases">
+                        <div className="mt-0" style={{height:'100vh',overflow:'auto'}}>
+                            <div className="row justify-content-center text-white pt-10 cases">
                                 <div className="col">
                                     <h1 className="font-weight-bold">
                                         TOTAL CASES

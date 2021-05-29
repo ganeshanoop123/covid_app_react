@@ -1,11 +1,20 @@
-import react, {useState} from 'react'
+import react from 'react'
+import BarLoader from "react-spinners/BarLoader";
 import ReactApexChart from "react-apexcharts";
 export default class Graphicalview extends react.Component{
     constructor(props){
         super(props)
 
         this.state = {
-          
+            css: `
+            display: block;
+            margin: 0 auto;
+            width: 300px !important;
+            margin-top: 15rem !important;
+            border-color: white;
+        `,
+            color: "#fff",
+            loading: true,
             series: [{
                 data: [this.props.covid_cases.cases,this.props.covid_cases.active,this.props.covid_cases.recovered,this.props.covid_cases.deaths],
             }],
@@ -90,9 +99,21 @@ export default class Graphicalview extends react.Component{
                     </div>
                 </div>
                 <div id="chart">
-                    <ReactApexChart options={this.state.options} series={this.state.series} type="bar" height={550} />
+                    {this.state.loading === false ?
+                        <ReactApexChart options={this.state.options} series={this.state.series} type="bar" height={550} />
+                        : <BarLoader color={this.state.color} loading={this.state.loading} css={this.state.css} className="mt-30 bg-white text-white" size={150} /> 
+                    }     
                 </div>
             </div>
         )            
+    }
+    componentDidMount(){
+        this.state.loading = true
+        setInterval(() => {
+            this.state.series = [{
+                data: [this.props.covid_cases.cases,this.props.covid_cases.active,this.props.covid_cases.recovered,this.props.covid_cases.deaths],
+            }]
+            this.state.loading = false
+        }, 500);
     }
 }
