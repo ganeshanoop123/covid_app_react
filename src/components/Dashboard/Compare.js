@@ -13,7 +13,7 @@ export default function Compare(props){
                     </div>
                 </div>
             </div>
-            <div className="mt-50 text-white fs-22 d-block ">Please Select Country</div>
+            <h1 className="mt-50 text-white d-block pointer">Please Click Here To Select Country</h1>
         </div>    
     )
 }
