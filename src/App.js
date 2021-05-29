@@ -7,6 +7,7 @@ import Navbar from './components/Navbar/Navbar.js';
 function App(props) {
     let [country_selected,setCountrySelected] = useState("")
     const [graphical_view,setGraphicalview] = useState(false)
+    const [compare,setCompare] = useState(false)
     let getCountryData = async (value) => {
         setCountrySelected(value)
     }
@@ -16,12 +17,18 @@ function App(props) {
     const showGraphical = () => {
         setGraphicalview(true)
     }
+    const closeComparision = () => {
+        setCompare(false)
+    }
+    const showComparision = () => {
+        setCompare(true)
+    }
     return (
         <Router>
             <div className="App">
-                <Navbar showGraphical={showGraphical} graphical_view={graphical_view} getCountryData={getCountryData}></Navbar>
+                <Navbar showComparision={showComparision} showGraphical={showGraphical} compare={compare} graphical_view={graphical_view} getCountryData={getCountryData}></Navbar>
                 <Switch>
-                    <Route path="/" exact component={ () => <Dashboard closeGraphical={closeGraphical} graphical_view={graphical_view} country_selected={country_selected}></Dashboard>} />
+                    <Route path="/" exact component={ () => <Dashboard closeComparision={closeComparision} compare={compare} closeGraphical={closeGraphical} graphical_view={graphical_view} country_selected={country_selected}></Dashboard>} />
                 </Switch>
             </div>
         </Router>

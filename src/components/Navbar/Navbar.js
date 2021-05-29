@@ -60,8 +60,11 @@ export default function Navbar(props){
                 COVID-19
             </h1>
             <div className="d-flex align-items-center">
-                { props.graphical_view === false ?
-                    <div className="w-100">
+                { props.graphical_view === false && props.compare === false ?
+                    <div className="w-100 d-flex align-items-center">
+                        <button onClick={props.showComparision} className="btn btn-smm btn-outline d-flex align-items-center mr-3" type="button">
+                            <i className="fa fa-exchange text-white pt-2 mr-1"></i><span>Compare</span>
+                        </button>
                         { mobile === false ?
                             <button onClick={props.showGraphical} className="btn btn-smm btn-outline d-flex align-items-center mr-3" type="button">
                                 <i className="fa fa-bar-chart text-white pt-2 mr-1"></i><span>Graphical View</span>
@@ -74,7 +77,7 @@ export default function Navbar(props){
                     </div> 
                     : null
                 }    
-                { props.graphical_view === false ?
+                { props.graphical_view === false && props.compare === false ?
                     <FormControl className={classes.formControl} style={{position:'relative',bottom:'2px'}}>
                         <Select name="country" value={selected_country} onChange={handleChange} displayEmpty className={classes.selectEmpty} inputProps={{ 'aria-label': 'Without label' }}>
                             {countries && countries.map((country,index) => (

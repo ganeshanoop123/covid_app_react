@@ -2,6 +2,7 @@ import react, { useEffect, useState } from 'react';
 import { css } from "@emotion/react";
 import BarLoader from "react-spinners/BarLoader";
 import Graphicalview from "./Graphicalview.js"
+import Compare from "./Compare.js"
 import Video from "./Video.js"
 import axios from "axios";
 import "./Dashboard.css"
@@ -56,7 +57,8 @@ export default function Dashboard(props){
             <Video></Video>
             
             {props.graphical_view === true ?
-                <Graphicalview closeGraphical={props.closeGraphical} covid_cases={covid}></Graphicalview> :
+                <Graphicalview closeGraphical={props.closeGraphical} covid_cases={covid}></Graphicalview> : 
+                props.compare === true ? <Compare closeComparision={props.closeComparision}></Compare> : 
                 <div>
                     {loading === false ?
                         <div className="mt-10 cases-top container">
