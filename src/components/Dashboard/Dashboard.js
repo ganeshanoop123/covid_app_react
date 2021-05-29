@@ -59,7 +59,7 @@ export default function Dashboard(props){
                 <Graphicalview closeGraphical={props.closeGraphical} covid_cases={covid}></Graphicalview> :
                 <div>
                     {loading === false ?
-                        <div className="mt-10 container" style={{height:'100vh',overflow:'auto'}}>
+                        <div className="mt-10 cases-top container">
                             <div className="row justify-content-center text-white pt-15 cases">
                                 <div className="col cases-card">
                                     <h1 className="font-weight-bold">
