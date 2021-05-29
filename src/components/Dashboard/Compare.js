@@ -1,11 +1,15 @@
-import react, { useEffect } from 'react';
-import Selectcountry from 'Selectcountry';
+import react, { useState } from 'react';
+import Selectcountry from './Selectcountry.js';
 
 export default function Compare(props){
-    const [open,setOpen] 
-    useEffect(() => {
-        console.log(props.country_list)
-    },[])
+    const [open,setOpen] = useState(false)
+
+    const showSelectCountry = () => {
+        setOpen(true)
+    }
+    const closeSelectCountry = () => {
+        setOpen(false)
+    }
     return(
         <div className="graphical-view">
             <div className="d-flex align-items-center close-graph justify-content-between">
@@ -18,8 +22,8 @@ export default function Compare(props){
                     </div>
                 </div>
             </div>
-            <h1 className="mt-50 text-white d-block pointer">Please Click Here To Select Country</h1>
-            { <Selectcountry></Selectcountry> }
+            <h1 className="mt-50 text-white d-block pointer" onClick={showSelectCountry}>Please Click Here To Select Country</h1>
+            { open === true ? <Selectcountry style={{zIndex:'9999'}} showSelectCountry={showSelectCountry} closeSelectCountry={closeSelectCountry} open={open}></Selectcountry> : null }
         </div>    
     )
 }

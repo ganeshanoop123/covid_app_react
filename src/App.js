@@ -25,7 +25,6 @@ function App(props) {
         setCompare(true)
     }
     const loadCountries = (value) => {
-        console.log(value)
         setCountryList(value)
     }
     return (
