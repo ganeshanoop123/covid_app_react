@@ -29,11 +29,14 @@ export default function Compare(props){
                     }    
                 </div>
             </div>
+            {country.length ? <button onClick={showselectcountry} className="btn btn-smm btn-outline d-flex align-items-center contentCenter mt-3 justify-content-end mr-3" type="button">
+                <span>Update Country</span>
+            </button> : null }
             {country.length === 0 && open === false ?
                 <h1 className="mt-50 text-white d-block pointer" onClick={showselectcountry}>Please Click Here To Select Country</h1>:
                 open === true ? null : <h1 className="mt-50 text-white d-block">PIE CHART</h1>
             }    
-            { open === true ? <Selectcountry saveCountry={saveCountry} style={{zIndex:'9999'}} country_list={props.country_list} showselectcountry={showselectcountry} closeselectCountry={closeselectCountry} open={open}></Selectcountry> : null }
+            { open === true ? <Selectcountry update_country={country} saveCountry={saveCountry} style={{zIndex:'9999'}} country_list={props.country_list} showselectcountry={showselectcountry} closeselectCountry={closeselectCountry} open={open}></Selectcountry> : null }
         </div>    
     )
 }

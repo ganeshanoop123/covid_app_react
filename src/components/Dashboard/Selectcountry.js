@@ -10,18 +10,13 @@ export default function Selectcountry(props) {
     const [result,setResult] = useState(0)
     const [, updateState] = React.useState();
     const forceUpdate = React.useCallback(() => updateState({}), []);
-    const [loading, setLoading] = useState(false);
+    const [show_selected, setSelected] = useState(false);
     const [filteredCountries, setFilteredCountries] = useState([]);
     const searchCountry = (e) => {
         setSearch(e.target.value)
         forceUpdate()
-        for(let i=0; i < props.country_list.length; i++){
-            if(props.country_list[i] === search){
-                console.log(i)
-                return i
-            }
-        }
-        return -1
+        setList([])
+        setResult(0)
     }
     const selectCountries = (e) => {
         if (selected_list.includes(e.target.value)) {
@@ -31,6 +26,11 @@ export default function Selectcountry(props) {
             setList([...selected_list, e.target.value]);// or push
             setResult(selected_list.length + 1)
         }
+    }
+    const filterSelected = (e) =>{
+        let name = e.target.getAttribute("name")
+        setList((list) => list.filter(chip => chip !== name));
+        setResult(selected_list.length - 1)
     }
     const resetSearch = () => {
         setSearch("")
@@ -45,7 +45,21 @@ export default function Selectcountry(props) {
         props.saveCountry(selected_list)
         props.closeselectCountry()
     }
+    const showSelected = () => {
+        if(selected_list.length){
+            if(show_selected){
+                setSelected(false)
+            }
+            else{
+                setSelected(true)
+            }
+        }
+    }
     useEffect(() => {
+        setList(props.update_country)
+        if(props.update_country.length > 0){
+            setResult(props.update_country.length)
+        }
         setFilteredCountries(
             props.country_list.filter((country) =>
                 country.country.toLowerCase().includes(search.toLowerCase())
@@ -77,7 +91,17 @@ export default function Selectcountry(props) {
                             <input className="search-bar" value={search} onInput={searchCountry} type="text" placeholder="Search Country ...." />
                         </div>
                     </div>
-                    {filteredCountries.length ? <div className="pointer pl-4 pt-2 fw-500 text-primary">{result <= 1 ? result + ' ' + 'Country Selected' : result + ' ' + 'Countries Selected' }</div> : null }
+                    {filteredCountries.length ? <div onClick={showSelected} className="pointer pl-4 pt-2 fw-500 text-primary">{result <= 1 ? result + ' ' + 'Country Selected' : result + ' ' + 'Countries Selected' }</div> : null }
+                    {show_selected ?
+                        <div className="d-flex align-items-center flex-wrap pt-3 pl-4 pr-4 chips">
+                            {selected_list && selected_list.map((chip,index) => (
+                                <div key={index} class="chip">
+                                    {chip}
+                                    <i name={chip} onClick={filterSelected} class="fa fa-close close"></i>
+                                </div>
+                            ))} 
+                        </div>: null
+                    }    
                     {filteredCountries.length === 0 ?
                         <div className="noResults">
                             No Results Found
@@ -86,7 +110,7 @@ export default function Selectcountry(props) {
                             {filteredCountries && filteredCountries.map((list,index) => (
                                 <div key={index} className="d-flex align-items-center country-list fw-500 fs-16">
                                     <FormControl component="fieldset">
-                                        <FormControlLabel value={list.country} onChange={selectCountries} control={<Checkbox color="default" size="small" />} label={list.country} className="fs-16" style={{fontSize:'16px',fontWeight:'500',marginTop:'1px'}} labelPlacement="end"/>
+                                        <FormControlLabel value={list.country} onChange={selectCountries} control={<Checkbox checked={selected_list.includes(list.country) && search === ''} color="default" size="small" />} label={list.country} className="fs-16" style={{fontSize:'16px',fontWeight:'500',marginTop:'1px'}} labelPlacement="end"/>
                                     </FormControl>
                                 </div>
                             ))}

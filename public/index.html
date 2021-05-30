@@ -284,6 +284,50 @@
                 position: relative;
                 width: 100%;
             }
+            .contentCenter{
+                margin: 0 auto;
+            }
+            .chip{
+                display: inline-block;
+                height: 32px;
+                font-size: 13px;
+                font-weight: 500;
+                color: rgba(0,0,0,0.6);
+                line-height: 32px;
+                padding: 0 12px;
+                border-radius: 16px;
+                background-color: #e4e4e4;
+                margin-bottom: 5px;
+                margin-right: 5px;
+            }
+            .chip .close {
+                cursor: pointer;
+                float: right;
+                font-size: 16px;
+                line-height: 32px;
+                padding-left: 8px;
+            }
+            .chips{
+                position: absolute;
+                z-index: 9999;
+                width: 100%;
+                background: #ffff;
+                border-bottom: solid 1px #cdd2da;
+            }
+            .my-node-enter {
+                opacity: 0;
+            }
+            .my-node-enter-active {
+                opacity: 1;
+                transition: opacity 200ms;
+            }
+            .my-node-exit {
+                opacity: 1;
+            }
+            .my-node-exit-active {
+                opacity: 0;
+                transition: opacity 200ms;
+            }
         </style>
     </head>
     <body>
