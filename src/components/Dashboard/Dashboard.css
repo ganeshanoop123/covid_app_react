@@ -94,3 +94,19 @@
     padding: 5px 15px 0px 15px;
     border-bottom: solid 1px #cdd2da;
 }
+.noResults{
+    height: 348px;
+    font-weight: 600;
+    margin: 0 auto;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    position: relative;
+    top: 130px;
+    font-size: 20px;
+}
+.overflow-country{
+    height: 348px;
+    max-height: 348px;
+    overflow: auto;
+}
