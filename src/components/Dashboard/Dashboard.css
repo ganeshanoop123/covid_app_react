@@ -59,7 +59,7 @@
 .overflow-content{
     overflow: auto;
     height: 70vh;
-    min-height: 89vh;
+    min-height: 84vh;
 }
 .graphical-view{
     position: fixed;
