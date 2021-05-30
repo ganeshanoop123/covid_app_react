@@ -181,6 +181,99 @@
             .pointer{
                 cursor: pointer;
             }
+            @keyframes customEnterAnimation {
+                0% {
+                    transform: scale(0);
+                }
+
+                100% {
+                    transform: scale(1);
+                }
+            }
+
+            @keyframes customLeaveAnimation {
+                0% {
+                    transform: scale(1);
+                }
+
+                100% {
+                    transform: scale(0);
+                }
+            }
+            .react-responsive-modal-overlay{
+                top: 53px !important; 
+            }
+            .modal-title{
+                background-color: #3c3c3c;
+                opacity: 0.9;
+                color: #fff;
+                border-top-left-radius: 6px;
+                border-top-right-radius: 6px;
+            }
+            .modal-title div{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 1.2rem !important;
+            }
+            .modal-title h5{
+                margin: 0 auto;
+                font-weight: bold;
+                font-size: 16px;
+                text-transform: uppercase;
+            }
+            .footer-actions{
+                display: block;
+                margin: 0 auto;
+                text-align: center;
+                margin-top: 44px;
+            }
+            .modal-body{
+                padding: 0px !important;
+            }
+            .react-responsive-modal-modal{
+                width: 440px;
+                height: 511px;
+                max-height: 511px;
+                border-radius: 6px;
+                background-color: #fff !important;
+                padding: 0px !important;
+                margin: 0 auto !important;
+            }
+            .react-responsive-modal-closeButton{
+                outline: 0;
+                display: none !important;
+            }
+            .fw-600{
+                font-weight: 600;
+            }
+            .fw-500{
+                font-weight: 500;
+            }
+            .MuiTypography-body1{
+                font-size: 15px !important;
+            }
+            .search-bar{
+                padding-left: 12px !important;
+                padding-right: 25px !important;
+                width: 100%;
+                padding-top: 5px;
+                border-radius: 23px;
+                box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+                padding-bottom: 5px;
+                border: solid 1px #cdd2da !important;
+            }
+            .search-magnify{
+                position: absolute;
+                right: 0;
+                margin-top: 4px;
+            }
+            .search-heading{
+                background: #ffff;
+                border-bottom: solid 1px #cdd2da;
+                position: relative;
+                width: 100%;
+            }
         </style>
     </head>
     <body>

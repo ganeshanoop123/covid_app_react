@@ -4,10 +4,10 @@ import Selectcountry from './Selectcountry.js';
 export default function Compare(props){
     const [open,setOpen] = useState(false)
 
-    const showSelectCountry = () => {
+    const showselectcountry = () => {
         setOpen(true)
     }
-    const closeSelectCountry = () => {
+    const closeselectCountry = () => {
         setOpen(false)
     }
     return(
@@ -22,8 +22,8 @@ export default function Compare(props){
                     </div>
                 </div>
             </div>
-            <h1 className="mt-50 text-white d-block pointer" onClick={showSelectCountry}>Please Click Here To Select Country</h1>
-            { open === true ? <Selectcountry style={{zIndex:'9999'}} showSelectCountry={showSelectCountry} closeSelectCountry={closeSelectCountry} open={open}></Selectcountry> : null }
+            <h1 className="mt-50 text-white d-block pointer" onClick={showselectcountry}>Please Click Here To Select Country</h1>
+            { open === true ? <Selectcountry style={{zIndex:'9999'}} country_list={props.country_list} showselectcountry={showselectcountry} closeselectCountry={closeselectCountry} open={open}></Selectcountry> : null }
         </div>    
     )
 }

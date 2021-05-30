@@ -90,3 +90,7 @@
     border-radius: 8px;
     opacity: 0.9;
 }
+.country-list{
+    padding: 5px 15px 0px 15px;
+    border-bottom: solid 1px #cdd2da;
+}
