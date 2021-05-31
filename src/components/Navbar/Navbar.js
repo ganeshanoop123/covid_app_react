@@ -70,8 +70,8 @@ export default function Navbar(props){
                                 <i className="fa fa-bar-chart text-white pt-2 mr-1"></i><span>Graphical View</span>
                             </button>
                             : 
-                            <button onClick={props.showGraphical} className="btn btn-smm btn-outline d-flex align-items-center" style={{width:'10px',minWidth:'50px',paddingRight:'0px'}} type="button">
-                                <i className="fa fa-bar-chart text-white pt-2 mr-1 ml-2"></i>
+                            <button onClick={props.showGraphical} className="btn btn-smm btn-outline d-flex align-items-center ml-3" style={{width:'10px',minWidth:'50px',paddingRight:'0px'}} type="button">
+                                <i className="fa fa-bar-chart text-white pt-2 mr-1"></i>
                             </button>
                         }       
                     </div> 
