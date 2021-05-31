@@ -6,7 +6,7 @@ There is an option to check the differences in the cases between the countries. 
 
 To Acheive this Resullts , made use of latest web technologies like - HTML5, CSS3, Bootstrap, Javascript, ReactJS, Firebase
 
-To Develop User Interface made use of HTML5, CSS3, Bootstrap, Material UI in ReactJS, ReactJS - Used Both Class Components and Functional Components, React Hooks.
+To Develop User Interface made use of HTML5, CSS3, Bootstrap, DOM, Javascript, Material UI in ReactJS, ReactJS - Used Both Class Components and Functional Components, React Hooks.
 
 Using Advanced Level Javascript Concepts like Promises and async/await to intergrated an APIs
 
