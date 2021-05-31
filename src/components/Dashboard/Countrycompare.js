@@ -34,6 +34,19 @@ export default class Countrycompare extends React.Component {
                     type: 'bar',
                     height: 350
                 },
+                grid: {
+                    show: true,
+                    yaxis: {
+                        lines: {
+                            show: false
+                        }
+                    }, 
+                    xaxis: {
+                        lines: {
+                            show: false
+                        }
+                    }, 
+                },
                 plotOptions: {
                     bar: {
                     horizontal: false,
